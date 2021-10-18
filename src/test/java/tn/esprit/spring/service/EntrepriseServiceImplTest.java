@@ -14,24 +14,46 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import tn.esprit.spring.entities.Role;
-import tn.esprit.spring.entities.User;
-import tn.esprit.spring.services.IUserService;
+import tn.esprit.spring.entities.Entreprise;
+import tn.esprit.spring.services.IEntrepriseService;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class UserServiceImplTest {
+public class EntrepriseServiceImplTest {
 
 		@Autowired
-		IUserService us; 
+		IEntrepriseService ent;
 	
-		
 		@Test
-		public void test(){
-			
+		public void testAddEnt() {
+			Entreprise e = new Entreprise("Esb", "Education B");
+			ent.addEnt(e);
 		}
 		
-		/*@Test
+		@Test
+		public void testUpdateEnt() {
+			Entreprise e = new Entreprise(2, "Gark", "SportTech");
+			ent.updateEnt(e);
+		}
+		
+		@Test
+		public void testGetAllEnt() {
+			List<Entreprise> lEnt = ent.getAllEntreprises();
+		}
+		
+		@Test
+		public void testDelEnt(){
+			ent.delEnt(4);
+		}
+		
+		@Test
+		public void testGetEnt(){
+			Entreprise e = ent.getEnt(1);
+		}
+		
+		/*
+		@Test
 		public void testRetrieveAllUsers() {
 			List<User> listUsers = us.retrieveAllUsers(); 
 			// if there are 7 users in DB : 
@@ -67,8 +89,8 @@ public class UserServiceImplTest {
 		public void testDeleteUser() {
 			us.deleteUser("3");
 			Assert.assertNull(us.retrieveUser("3"));
-		}*/
-		
+		}
+		*/
 		// 5 tests unitaires  
  
 }
