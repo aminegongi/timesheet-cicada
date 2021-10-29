@@ -46,6 +46,11 @@ public class Departement implements Serializable {
 		this.name = name;
 	}
 	
+	public Departement(String name, Entreprise entreprise) {
+		this.name = name;
+		this.entreprise = entreprise;
+	}
+
 	public int getId() {
 		return id;
 	}
