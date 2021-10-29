@@ -82,7 +82,4 @@ public class Entreprise implements Serializable{
 		this.departements.add(departement);
 	}
 
-
-
-
 }
