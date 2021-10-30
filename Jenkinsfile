@@ -12,9 +12,8 @@ pipeline {
     post {
         always {
             mail bcc: '', 
-            body: '''Build successful!!!!
-            Thanks,
-            Mahesh''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'amine.gongi@esprit.tn'
+            body: '''Build successful!!!! $PROJECT_NAME
+            Thanks''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'amine.gongi@esprit.tn'
         }
     }
 }
