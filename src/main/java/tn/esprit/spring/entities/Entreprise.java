@@ -81,5 +81,4 @@ public class Entreprise implements Serializable{
 		departement.setEntreprise(this);
 		this.departements.add(departement);
 	}
-
 }
