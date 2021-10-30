@@ -27,11 +27,6 @@ public class UserServiceImplTest {
 	
 		
 		@Test
-		public void test(){
-			
-		}
-		
-		/*@Test
 		public void testRetrieveAllUsers() {
 			List<User> listUsers = us.retrieveAllUsers(); 
 			// if there are 7 users in DB : 
@@ -62,11 +57,11 @@ public class UserServiceImplTest {
 			User userRetrieved = us.retrieveUser("1"); 
 			Assert.assertEquals(1L, userRetrieved.getId().longValue());
 		}
-		
+		/*
 		@Test
 		public void testDeleteUser() {
-			us.deleteUser("3");
-			Assert.assertNull(us.retrieveUser("3"));
+			us.deleteUser("6");
+			Assert.assertNull(us.retrieveUser("1"));
 		}*/
 		
 		// 5 tests unitaires  

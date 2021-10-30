@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entities.Entreprise;
-import tn.esprit.spring.entities.User;
 import tn.esprit.spring.repository.EntrepriseRepository;
 
 
@@ -25,7 +24,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	
 	@Override
 	public List<Entreprise> getAllEntreprises() {
-		List<Entreprise> ents = new ArrayList<Entreprise>();
+		List<Entreprise> ents = new ArrayList<>();
 		l.info("getAllEnts");
 		ents = (List<Entreprise>) entRepo.findAll();  
 		for (Entreprise e : ents) {
@@ -49,7 +48,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 
 	@Override
 	public Entreprise getEnt(int id) {
-		Entreprise e = entRepo.findById(id).get();
+		Entreprise e = entRepo.findById(id).orElse(null);
 		l.warn("Entreprise : " + e);
 		return e;
 	}

@@ -44,7 +44,7 @@ public class EntrepriseServiceImplTest {
 		
 		@Test
 		public void testDelEnt(){
-			ent.delEnt(4);
+			ent.delEnt(8);
 		}
 		
 		@Test
