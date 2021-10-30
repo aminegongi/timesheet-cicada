@@ -31,8 +31,7 @@ pipeline {
         success {
             mail bcc: '', 
             body: ''' Hey,
-            The Build of your CiProject Pipeline was successful <3
-            Thanks''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'amine.gongi@esprit.tn'
+            The Build of your CiProject Pipeline was successful <3''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'amine.gongi@esprit.tn'
         }
         failure {
             mail bcc: '', 
