@@ -7,17 +7,17 @@ pipeline {
                 echo "Okkkkkkkkk"
             }
         }
-        stage('Sonar'){
-            steps {
-                bat 'mvn sonar:sonar';
-            }
-        }
+        //stage('Sonar'){
+        //    steps {
+        //        bat 'mvn sonar:sonar';
+        //    }
+        //}
     }
     
     post {
-        //always {
-        //    cleanWs()
-        //}
+        always {
+            cleanWs()
+        }
         success {
             mail bcc: '', 
             body: ''' Hey,
