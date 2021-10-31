@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                bat "mvn clean package -DskipTests"
+                bat "mvn clean package"
             }
         }
         stage('Deploy to Nexus'){
