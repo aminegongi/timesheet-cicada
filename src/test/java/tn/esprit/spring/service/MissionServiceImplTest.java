@@ -47,14 +47,14 @@ public class MissionServiceImplTest {
 
 	@Test
 	public void testRetrieveMission() {
-		Mission missionRetrieved = ms.retrieveMission("31"); 
+		Mission missionRetrieved = ms.retrieveMission("31") ; 
 		Assert.assertEquals(31, missionRetrieved.getId());
 	}
 	
 	@Test
 	public void testDeleteMission() {
-		ms.deleteMission("77");
-		Assert.assertNull(ms.retrieveMission("77"));
+		ms.deleteMission("78");
+		Assert.assertNull(ms.retrieveMission("78"));
 	}
 	
 	// 5 tests unitaires 
