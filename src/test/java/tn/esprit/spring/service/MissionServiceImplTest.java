@@ -27,7 +27,7 @@ public class MissionServiceImplTest {
 	public void testretrieveAllMissions() {
 		List<Mission> listMissions = ms.retrieveAllMissions(); 
 		// if there are 7 users in DB : 
-		Assert.assertEquals(5, listMissions.size()); 
+		Assert.assertEquals(6, listMissions.size()); 
 	}
 	@Test
 	public void testAddMission() throws ParseException {
@@ -47,14 +47,14 @@ public class MissionServiceImplTest {
 
 	@Test
 	public void testRetrieveMission() {
-		Mission missionRetrieved = ms.retrieveMission("30"); 
-		Assert.assertEquals(30, missionRetrieved.getId());
+		Mission missionRetrieved = ms.retrieveMission("31"); 
+		Assert.assertEquals(31, missionRetrieved.getId());
 	}
 	
 	@Test
 	public void testDeleteMission() {
-		ms.deleteMission("49");
-		Assert.assertNull(ms.retrieveMission("49"));
+		ms.deleteMission("60");
+		Assert.assertNull(ms.retrieveMission("59"));
 	}
 	
 	// 5 tests unitaires 
