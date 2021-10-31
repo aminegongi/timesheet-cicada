@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entities.Mission;
-import tn.esprit.spring.entities.User;
+
 import tn.esprit.spring.repository.MissionRepository;
 @Service
 public class MissionServiceImpl implements IMissionService {
@@ -17,7 +17,7 @@ public class MissionServiceImpl implements IMissionService {
 
 	@Override
 	public List<Mission> retrieveAllMissions() {
-		// TODO Auto-generated method stub
+	
 		List<Mission> missions = null; 
 		try {
 	
@@ -36,28 +36,27 @@ public class MissionServiceImpl implements IMissionService {
 
 	@Override
 	public Mission addMission(Mission m) {
-		// TODO Auto-generated method stub
+	
 		return MissionRepository.save(m) ;
 	}
 
 	@Override
 	public void deleteMission(String id) {
-		// TODO Auto-generated method stub
+	
 		MissionRepository.deleteById(Long.parseLong(id));
 	}
 
 	@Override
 	public Mission updateMission(Mission m) {
-		// TODO Auto-generated method stub
+		
 		return MissionRepository.save(m);
 	}
 
 	@Override
 	public Mission retrieveMission(String id) {
-		// TODO Auto-generated method stub
+		
 		l.info("in  retrieveMission id = " + id);
-		//Mission m =  userRepository.findById(Long.parseLong(id)).orElse(null);
-		//int i = 1/0; 
+		 
 		Mission m =  MissionRepository.findById(Long.parseLong(id)).orElse(null); 
 		l.info("mission returned : " + m);
 		return m; 
