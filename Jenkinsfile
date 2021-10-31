@@ -7,21 +7,22 @@ pipeline {
                 echo "Okkkkkkkkk"
             }
         }
-        //stage('Test Unitaire'){
-        //    steps {
-        //        bat 'mvn test';
-        //    }
-        //}
-        //stage('Sonar'){
-        //    steps {
-        //        bat 'mvn sonar:sonar';
-        //    }
-        //}
-        //stage('Nexus'){
-        //    steps {
-        //        bat 'mvn deploy';
-        //    }
-        //}
+        stage("Build") {
+            steps {
+                bat "mvn clean package -DskipTests"
+            }
+        }
+        stage('Deploy to Nexus'){
+            steps {
+                bat 'mvn deploy';
+            }
+        }
+        stage('Test Statique Sonar'){
+            steps {
+                bat 'mvn sonar:sonar';
+            }
+        }
+
     }
     
     post {
