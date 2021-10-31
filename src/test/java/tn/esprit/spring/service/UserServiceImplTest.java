@@ -16,7 +16,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import tn.esprit.spring.entities.Role;
 import tn.esprit.spring.entities.User;
+import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.services.IUserService;
+import tn.esprit.spring.services.IContratService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -24,12 +26,12 @@ public class UserServiceImplTest {
 
 		@Autowired
 		IUserService us; 
+		IContratService cs;
 	
 		@Test
 		public void testRetrieveAllUsers() {
-			List<User> listUsers = us.retrieveAllUsers(); 
-			// if there are 7 users in DB : 
-			Assert.assertEquals(15, listUsers.size());
+			List<User> listUsers =us.retrieveAllUsers(); 
+			Assert.assertEquals(10, listUsers.size());
 		}
 		
 		
@@ -53,18 +55,18 @@ public class UserServiceImplTest {
 	
 		@Test
 		public void testRetrieveUser() {
-			User userRetrieved = us.retrieveUser("1"); 
-			Assert.assertEquals(1L, userRetrieved.getId().longValue());
+			User userRetrieved = us.retrieveUser("2"); 
+			Assert.assertEquals(2L, userRetrieved.getId().longValue());
 		}
 		
 		@Test
 		public void testDeleteUser() {
-			us.deleteUser("3");
-			Assert.assertNull(us.retrieveUser("3"));
+			us.deleteUser("12");
+			Assert.assertNull(us.retrieveUser("12"));
 		}
 		
-		// 5 tests unitaires  
- 
+		// 5 tests unitaires  -
+		
 }
 
 

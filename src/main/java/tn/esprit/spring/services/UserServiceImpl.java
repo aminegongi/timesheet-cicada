@@ -17,13 +17,9 @@ public class UserServiceImpl implements IUserService {
 
 	@Autowired
 	UserRepository userRepository;
-
 	private static final Logger l = LogManager.getLogger(UserServiceImpl.class);
 
 
-
-	
-	
 	@Override
 	public List<User> retrieveAllUsers() { 
 		List<User> users = null; 
@@ -61,9 +57,9 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public User retrieveUser(String id) {
 		l.info("in  retrieveUser id = " + id);
-		//User u =  userRepository.findById(Long.parseLong(id)).orElse(null);
+		User u =  userRepository.findById(Long.parseLong(id)).orElse(null);
 		//int i = 1/0; 
-		User u =  userRepository.findById(Long.parseLong(id)).get(); 
+//		ser u =  userRepository.findById(Long.parseLong(id)).get(); 
 		l.info("user returned : " + u);
 		return u; 
 	}
