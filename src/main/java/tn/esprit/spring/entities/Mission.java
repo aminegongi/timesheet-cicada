@@ -18,7 +18,7 @@ public class Mission implements Serializable {
 	// Auto Increment 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private long id;
 	
 	private String name;
 	
@@ -31,23 +31,48 @@ public class Mission implements Serializable {
 	@OneToMany(mappedBy="mission")
 	private  List<Timesheet> timesheets;
 	
-	public Mission() {
-		super();
+	
+	
+	
+	public Mission(){
 	}
-
 	public Mission(String name, String description){
 		this.name = name;
 		this.description = description;
 	}
 	
 
-	public int getId() {
+	
+
+
+
+	public Mission(long l, String name, String description) {
+		// TODO Auto-generated constructor stub
+		super();
+	    this.id=l;
+		this.name = name;
+		this.description = description;
+	}
+
+	
+
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+
+
+
+
+
+	public void setId(long id) {
 		this.id = id;
 	}
+
+
+
+
+
 
 	public String getName() {
 		return name;

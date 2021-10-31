@@ -36,7 +36,7 @@ public class UserServiceImpl implements IUserService {
 			} 
 			l.info("Out of retrieveAllUsers() : ");
 		}catch (Exception e) {
-			l.error("Error in retrieveAllUsers() : " + e);
+			l.info("Error in retrieveAllUsers() : " + e);
 		}
 
 		return users;
@@ -63,7 +63,7 @@ public class UserServiceImpl implements IUserService {
 		l.info("in  retrieveUser id = " + id);
 		//User u =  userRepository.findById(Long.parseLong(id)).orElse(null);
 		//int i = 1/0; 
-		User u =  userRepository.findById(Long.parseLong(id)).get(); 
+		User u =  userRepository.findById(Long.parseLong(id)).orElse(null); 
 		l.info("user returned : " + u);
 		return u; 
 	}
