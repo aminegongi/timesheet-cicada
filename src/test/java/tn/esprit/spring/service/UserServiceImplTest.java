@@ -47,7 +47,7 @@ public class UserServiceImplTest {
 		public void testModifyUser() throws ParseException   {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");
-			User u = new User(5L, "Mayssa122222222", "Mayssa", d, Role.INGENIEUR); 
+			User u = new User(7L, "Mayssa122222222", "Mayssa", d, Role.INGENIEUR); 
 			User userUpdated  = us.updateUser(u); 
 			Assert.assertEquals(u.getLastName(), userUpdated.getLastName());
 		}
@@ -57,12 +57,12 @@ public class UserServiceImplTest {
 			User userRetrieved = us.retrieveUser("1"); 
 			Assert.assertEquals(1L, userRetrieved.getId().longValue());
 		}
-		/*
+		
 		@Test
 		public void testDeleteUser() {
-			us.deleteUser("6");
-			Assert.assertNull(us.retrieveUser("1"));
-		}*/
+			us.deleteUser("39");
+			Assert.assertNull(us.retrieveUser("39"));
+		}
 		
 		// 5 tests unitaires  
  

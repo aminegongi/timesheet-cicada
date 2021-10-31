@@ -28,29 +28,36 @@ public class EntrepriseServiceImplTest {
 		@Test
 		public void testAddEnt() {
 			Entreprise e = new Entreprise("Esb", "Education B");
-			ent.addEnt(e);
+			Entreprise eAdd = ent.addEnt(e);
+			Assert.assertEquals(e.getName(), eAdd.getName());
 		}
 		
 		@Test
 		public void testUpdateEnt() {
-			Entreprise e = new Entreprise(2, "Gark", "SportTech");
-			ent.updateEnt(e);
+			Entreprise e = new Entreprise(3, "Gark", "SportTech");
+			Entreprise eMod = ent.updateEnt(e);
+			Assert.assertEquals(e.getName(), eMod.getName());
 		}
 		
 		@Test
 		public void testGetAllEnt() {
 			List<Entreprise> lEnt = ent.getAllEntreprises();
-		}
-		
-		@Test
-		public void testDelEnt(){
-			ent.delEnt(8);
+			Assert.assertEquals(10, lEnt.size());
 		}
 		
 		@Test
 		public void testGetEnt(){
 			Entreprise e = ent.getEnt(1);
+			Assert.assertEquals(1, e.getId());
 		}
+		
+		@Test
+		public void testDelEnt(){
+			ent.delEnt(18);
+			Assert.assertNull(ent.getEnt(18));
+		}
+		
+
 		
 		/*
 		@Test
