@@ -11,6 +11,5 @@ public interface IEmployeService {
 	void deleteEmploye(String id);
 	Employe updateEmploye(Employe u);
 	Employe retrieveEmploye(String id);
-
 } 
  
