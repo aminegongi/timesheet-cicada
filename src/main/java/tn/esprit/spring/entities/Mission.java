@@ -47,7 +47,7 @@ public class Mission implements Serializable {
 
 
 	public Mission(long l, String name, String description) {
-		// TODO Auto-generated constructor stub
+	
 		super();
 	    this.id=l;
 		this.name = name;

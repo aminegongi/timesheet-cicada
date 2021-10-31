@@ -12,7 +12,7 @@ import tn.esprit.spring.repository.MissionRepository;
 @Service
 public class MissionServiceImpl implements IMissionService {
 	@Autowired
-	MissionRepository MissionRepository;
+	MissionRepository missionrepository;
 	private static final Logger l = LogManager.getLogger(MissionServiceImpl.class);
 
 	@Override
@@ -22,7 +22,7 @@ public class MissionServiceImpl implements IMissionService {
 		try {
 	
 			l.info("In retrieveAllMissions() : ");
-			missions = (List<Mission>) MissionRepository.findAll() ;  
+			missions = (List<Mission>) missionrepository.findAll() ;  
 			for (Mission mission : missions) {
 				l.debug("mission +++ : " +mission);
 			} 
@@ -37,19 +37,19 @@ public class MissionServiceImpl implements IMissionService {
 	@Override
 	public Mission addMission(Mission m) {
 	
-		return MissionRepository.save(m) ;
+		return missionrepository.save(m) ;
 	}
 
 	@Override
 	public void deleteMission(String id) {
 	
-		MissionRepository.deleteById(Long.parseLong(id));
+		missionrepository.deleteById(Long.parseLong(id));
 	}
 
 	@Override
 	public Mission updateMission(Mission m) {
 		
-		return MissionRepository.save(m);
+		return missionrepository.save(m);
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public class MissionServiceImpl implements IMissionService {
 		
 		l.info("in  retrieveMission id = " + id);
 		 
-		Mission m =  MissionRepository.findById(Long.parseLong(id)).orElse(null); 
+		Mission m =  missionrepository.findById(Long.parseLong(id)).orElse(null); 
 		l.info("mission returned : " + m);
 		return m; 
 	}
