@@ -50,7 +50,7 @@ public class UserServiceImplTest {
 		public void testModifyUser() throws ParseException   {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");
-			User u = new User(5L, "Mayssa122222222", "Mayssa", d, Role.INGENIEUR); 
+			User u = new User(1L, "Mayssa122222222", "Mayssa", d, Role.INGENIEUR); 
 			User userUpdated  = us.updateUser(u); 
 			Assert.assertEquals(u.getLastName(), userUpdated.getLastName());
 		}
@@ -63,7 +63,7 @@ public class UserServiceImplTest {
 		
 		@Test
 		public void testDeleteUser() {
-			String idDel = "7";
+			String idDel = "11";
 			us.deleteUser(idDel);
 			Assert.assertNull(us.retrieveUser(idDel));
 		}
