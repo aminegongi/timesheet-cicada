@@ -2,11 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Ok') {
-            steps {
-                echo "Okkkkkkkkk"
-            }
-        }
         stage("Build") {
             steps {
                 bat "mvn clean package"
@@ -14,7 +9,7 @@ pipeline {
         }
         stage('Nexus deploy'){
             steps {
-                bat 'mvn deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet-ci -Dversion=1.1 -DgeneratePom=true -Dpackaging=jar  -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-ci-1.1.jar';
+                bat 'mvn deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet-ci -Dversion=1.2 -DgeneratePom=true -Dpackaging=jar  -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-ci-1.2.jar';
             }
         }
         stage('Sonar Test'){
@@ -28,7 +23,7 @@ pipeline {
         always {
             cleanWs()
             mail bcc: '', 
-            body: '''Build Done , please check result !''', cc: '', from: '', replyTo: '', subject: 'Build successfull', to: 'nour.dziri1@esprit.tn'
+            body: '''Build Done , please check result !''', cc: '', from: '', replyTo: '', subject: 'Jenkins Build', to: 'nour.dziri1@esprit.tn'
         }
     }
 }
