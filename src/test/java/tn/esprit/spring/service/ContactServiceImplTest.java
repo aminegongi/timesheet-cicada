@@ -25,7 +25,7 @@ public class ContactServiceImplTest {
 	@Test
 	public void testRetrieveAllContrats() {
 		List<Contrat> listContrats = cs.retrieveAllContrats();
-		Assert.assertEquals(20, listContrats.size());
+		Assert.assertEquals(21, listContrats.size());
 	}
 	
 	@Test
@@ -53,8 +53,8 @@ public class ContactServiceImplTest {
 	
 	@Test
 	public void testDeleteContrat() {
-		cs.deleteContrat("20");
-		Assert.assertNull(cs.retrieveContrat("20"));
+		cs.deleteContrat("21");
+		Assert.assertNull(cs.retrieveContrat("21"));
 	}
 
 }
