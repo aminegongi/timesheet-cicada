@@ -4,7 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import tn.esprit.spring.entities.Contrat;
-import tn.esprit.spring.entities.User;
 import tn.esprit.spring.services.IContratService;
 
 
@@ -27,7 +25,7 @@ public class ContactServiceImplTest {
 	@Test
 	public void testRetrieveAllContrats() {
 		List<Contrat> listContrats = cs.retrieveAllContrats();
-		Assert.assertEquals(8, listContrats.size());
+		Assert.assertEquals(20, listContrats.size());
 	}
 	
 	@Test
@@ -55,8 +53,8 @@ public class ContactServiceImplTest {
 	
 	@Test
 	public void testDeleteContrat() {
-		cs.deleteContrat("12");
-		Assert.assertNull(cs.retrieveContrat("12"));
+		cs.deleteContrat("20");
+		Assert.assertNull(cs.retrieveContrat("20"));
 	}
 
 }

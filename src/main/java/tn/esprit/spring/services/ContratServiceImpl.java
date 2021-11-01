@@ -1,8 +1,6 @@
 package tn.esprit.spring.services;
-import java.io.Console;
 import java.util.List;
 
-import javax.transaction.Transactional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entities.Contrat;
-import tn.esprit.spring.entities.User;
 import tn.esprit.spring.repository.ContratRepository;;
 
 @Service
@@ -59,7 +56,6 @@ public class ContratServiceImpl implements IContratService {
 
 	@Override
 	public Contrat retrieveContrat(String id) { 
-		//Contrat c =  contratRepository.findById(Long.parseLong(id)).get(); 
 		Contrat c =  contratRepository.findById(Long.parseLong(id)).orElse(null);
 		l.info("Contrat returned : " + c);
 		return c; 
