@@ -23,7 +23,6 @@ public class DepartementServiceImpl implements IDepartementService {
 	public List<Departement> retrieveAllDepartements() {
 		List<Departement> deps = null; 
 		try {
-	
 			l.info("In retrieveAllDepartements() : ");
 			deps = (List<Departement>) depRepository.findAll();  
 			for (Departement dep : deps) {

@@ -26,12 +26,16 @@ public class UserServiceImplTest {
 		IUserService us; 
 	
 		@Test
+		public void tess(){
+			
+		}
+		
+		@Test
 		public void testRetrieveAllUsers() {
 			List<User> listUsers = us.retrieveAllUsers(); 
 			// if there are 7 users in DB : 
-			Assert.assertEquals(15, listUsers.size());
-		}
-	/*	
+			Assert.assertEquals(5, listUsers.size());
+		}	
 		
 		@Test
 		public void testAddUser() throws ParseException {
@@ -59,11 +63,10 @@ public class UserServiceImplTest {
 		
 		@Test
 		public void testDeleteUser() {
-			us.deleteUser("7");
-			Assert.assertNull(us.retrieveUser("7"));
+			String idDel = "7";
+			us.deleteUser(idDel);
+			Assert.assertNull(us.retrieveUser(idDel));
 		}
-		*/
-		// 5 tests unitaires  
  
 }
 

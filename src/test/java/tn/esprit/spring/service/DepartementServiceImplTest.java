@@ -27,18 +27,15 @@ public class DepartementServiceImplTest {
 
 		@Autowired
 		IDepartementService ds; 
-	
+
 		@Test
 		public void testRetrieveAllDepartements() {
 			List<Departement> listDepartements = ds.retrieveAllDepartements(); 
-			Assert.assertEquals(4, listDepartements.size());
+			Assert.assertEquals(6, listDepartements.size());
 		}
-		
-		/*
+
 		@Test
 		public void testAddDepartement() throws ParseException {
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-			Date d = dateFormat.parse("2015-03-23");
 			Entreprise en = new Entreprise();
 			en.setId(1);
 			Departement dd = new Departement("RH",en );
@@ -48,24 +45,24 @@ public class DepartementServiceImplTest {
 		
 		@Test
 		public void testModifyDepartement() throws ParseException   {
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-			Date d = dateFormat.parse("2015-03-23");
-			Departement dd = new Departement("IT");
-			dd.setId(6);
-			Departement departementAdded = ds.addDepartement(dd); 
+			Entreprise en = new Entreprise();
+			en.setId(1);
+			Departement dd = new Departement("IT",en);
+			dd.setId(3);
+			Departement departementAdded = ds.updateDepartement(dd);
 			Assert.assertEquals(dd.getName() , departementAdded.getName());
 		}
 		
-		@Test
+		/*@Test
 		public void testRetrieveDepartement() {
-			Departement depRetrieved = ds.retrieveDepartement("6"); 
-			Assert.assertEquals(6L, depRetrieved.getId());
+			Departement depRetrieved = ds.retrieveDepartement("3"); 
+			Assert.assertEquals(3L, depRetrieved.getId());
 		}
 		
 		@Test
 		public void testDeleteDepartement() {
-			ds.deleteDepartement("6");
-			Assert.assertNull(ds.retrieveDepartement("6L"));
+			ds.deleteDepartement("1");
+			Assert.assertNull(ds.retrieveDepartement("1"));
 		}*/
 
 }
