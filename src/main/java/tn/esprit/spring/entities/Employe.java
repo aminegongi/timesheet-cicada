@@ -17,18 +17,17 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
+
 public class Employe implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	//@SequenceGenerator(name="seq")
 	private int id;
 	
 	private String prenom;
@@ -36,8 +35,6 @@ public class Employe implements Serializable {
 
 	private String nom;
 		
-	//@Column(unique=true)
-	//@Pattern(regex=".+\@.+\..+")
 	private String email;
 
 	private String password;
@@ -45,20 +42,18 @@ public class Employe implements Serializable {
 	private boolean actif;
 	
 	@Enumerated(EnumType.STRING)
-	//@NotNull
 	private Role role;
 	
-	//@JsonBackReference  
 	@JsonIgnore
 	@ManyToMany(mappedBy="employes" )
-	//@NotNull
+
 	private List<Departement> departements;
 	
 	@OneToOne
 	private Contrat contrat;
 	
 	@JsonIgnore
-	//@JsonBackReference
+
 	@OneToMany(mappedBy="employe")
 	private List<Timesheet> timesheets;
 	
@@ -97,6 +92,8 @@ public class Employe implements Serializable {
 		this.role = role;
 	}
 	
+	
+
 	public int getId() {
 		return id;
 	}

@@ -40,14 +40,14 @@ public class EmployeServiceImplTest {
 			List<Employe> lEmp = emp.retrieveAllEmploye();
 			Assert.assertEquals(5, lEmp.size());
 		}
-		
-		/*@Test
+		/*
+		@Test
 		public void testDelEmploye(){
-			emp.deleteEmploye("5");
-			Assert.assertNull(us.retrieveUser("12"));
-		}
+			emp.deleteEmploye("3");
 		
+		}*/
 		
+		/*
 		@Test
 		public void testGetEmploye(){
 			Employe e = emp.retrieveEmploye("2");
