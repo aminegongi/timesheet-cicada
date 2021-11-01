@@ -27,14 +27,14 @@ public class EntrepriseServiceImplTest {
 	
 		@Test
 		public void testAddEnt() {
-			Entreprise e = new Entreprise("Esb", "Education B");
+			Entreprise e = new Entreprise("Esb", "Education");
 			Entreprise eAdd = ent.addEnt(e);
 			Assert.assertEquals(e.getName(), eAdd.getName());
 		}
 		
 		@Test
 		public void testUpdateEnt() {
-			Entreprise e = new Entreprise(3, "Gark", "SportTech");
+			Entreprise e = new Entreprise(5, "Gark", "SportTech");
 			Entreprise eMod = ent.updateEnt(e);
 			Assert.assertEquals(e.getName(), eMod.getName());
 		}
@@ -53,53 +53,9 @@ public class EntrepriseServiceImplTest {
 		
 		@Test
 		public void testDelEnt(){
-			ent.delEnt(22);
-			Assert.assertNull(ent.getEnt(22));
+			ent.delEnt(23);
+			Assert.assertNull(ent.getEnt(23));
 		}
-		
-
-		
-		/*
-		@Test
-		public void testRetrieveAllUsers() {
-			List<User> listUsers = us.retrieveAllUsers(); 
-			// if there are 7 users in DB : 
-			Assert.assertEquals(15, listUsers.size());
-		}
-		
-		
-		@Test
-		public void testAddUser() throws ParseException {
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-			Date d = dateFormat.parse("2015-03-23");
-			User u = new User("Mayssa1", "Mayssa1", d, Role.INGENIEUR); 
-			User userAdded = us.addUser(u); 
-			Assert.assertEquals(u.getLastName(), userAdded.getLastName());
-		}
-	 
-		@Test
-		public void testModifyUser() throws ParseException   {
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-			Date d = dateFormat.parse("2015-03-23");
-			User u = new User(5L, "Mayssa122222222", "Mayssa", d, Role.INGENIEUR); 
-			User userUpdated  = us.updateUser(u); 
-			Assert.assertEquals(u.getLastName(), userUpdated.getLastName());
-		}
-	
-		@Test
-		public void testRetrieveUser() {
-			User userRetrieved = us.retrieveUser("1"); 
-			Assert.assertEquals(1L, userRetrieved.getId().longValue());
-		}
-		
-		@Test
-		public void testDeleteUser() {
-			us.deleteUser("3");
-			Assert.assertNull(us.retrieveUser("3"));
-		}
-		*/
-		// 5 tests unitaires  
- 
 }
 
 
