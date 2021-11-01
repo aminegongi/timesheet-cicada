@@ -12,7 +12,7 @@ pipeline {
                 bat 'mvn deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet-ci -Dversion=1.2 -DgeneratePom=true -Dpackaging=jar  -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/timesheet-ci-1.2.jar';
             }
         }
-        stage('Test Statique Sonar'){
+        stage('Test Statique SonarQube'){
             steps {
                 bat 'mvn sonar:sonar';
             }
