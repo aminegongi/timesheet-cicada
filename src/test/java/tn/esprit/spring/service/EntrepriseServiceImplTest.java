@@ -34,7 +34,7 @@ public class EntrepriseServiceImplTest {
 		
 		@Test
 		public void testUpdateEnt() {
-			Entreprise e = new Entreprise(5, "Gark", "SportTech");
+			Entreprise e = new Entreprise(9, "Gark", "SportTech");
 			Entreprise eMod = ent.updateEnt(e);
 			Assert.assertEquals(e.getName(), eMod.getName());
 		}
@@ -53,8 +53,8 @@ public class EntrepriseServiceImplTest {
 		
 		@Test
 		public void testDelEnt(){
-			ent.delEnt(23);
-			Assert.assertNull(ent.getEnt(23));
+			ent.delEnt(24);
+			Assert.assertNull(ent.getEnt(24));
 		}
 }
 
