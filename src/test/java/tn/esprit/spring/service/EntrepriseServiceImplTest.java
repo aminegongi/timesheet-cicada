@@ -53,8 +53,8 @@ public class EntrepriseServiceImplTest {
 		
 		@Test
 		public void testDelEnt(){
-			ent.delEnt(24);
-			Assert.assertNull(ent.getEnt(24));
+			ent.delEnt(25);
+			Assert.assertNull(ent.getEnt(25));
 		}
 }
 
