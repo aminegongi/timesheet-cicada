@@ -31,7 +31,7 @@ public class UserServiceImplTest {
 		@Test
 		public void testRetrieveAllUsers() {
 			List<User> listUsers =us.retrieveAllUsers(); 
-			Assert.assertEquals(28, listUsers.size());
+			Assert.assertEquals(32, listUsers.size());
 		}
 		
 		
@@ -61,8 +61,8 @@ public class UserServiceImplTest {
 		
 		@Test
 		public void testDeleteUser() {
-			us.deleteUser("28");
-			Assert.assertNull(us.retrieveUser("28"));
+			us.deleteUser("32");
+			Assert.assertNull(us.retrieveUser("32"));
 		}
 		
 		// 5 tests unitaires  -
