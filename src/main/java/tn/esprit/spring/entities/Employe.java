@@ -62,7 +62,7 @@ public class Employe implements Serializable {
 	@JsonIgnore
 	//@JsonBackReference
 	@OneToMany(mappedBy="employe")
-	private List<Timesheet> timesheets;
+	private List<TimesheetO> timesheets;
 	
 	public Employe() {
 		super();
@@ -176,11 +176,11 @@ public class Employe implements Serializable {
 		this.contrat = contrat;
 	}
 
-	public List<Timesheet> getTimesheets() {
+	public List<TimesheetO> getTimesheets() {
 		return timesheets;
 	}
 
-	public void setTimesheets(List<Timesheet> timesheets) {
+	public void setTimesheets(List<TimesheetO> timesheets) {
 		this.timesheets = timesheets;
 	}
 

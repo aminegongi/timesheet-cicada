@@ -33,18 +33,19 @@ public class TimeSheetServiceImpTest {
 		}
 		
 		
-		/*@Test
+		@Test
 		public void testAddTimesheet() throws ParseException {
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-			Date dd = dateFormat.parse("2021-03-23");
-			Date df = dateFormat.parse("2022-03-23");
-			Timesheet t = new Timesheet(dd,df,1,1,0); 
+			SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm:ss");
+			Date dd = dateFormat.parse("08:30:00");
+			Date df = dateFormat.parse("17:15:00");
+			Timesheet t = new Timesheet(1,1,dd,df); 
 			Timesheet timesheetAdded = ts.addTimesheet(t); 
-			Assert.assertEquals(t.getLastName(), timesheetAdded.getLastName());
+			Assert.assertEquals(t.getDateDebut(), timesheetAdded.getDateDebut());
+			Assert.assertEquals(t.getDateFin(), timesheetAdded.getDateFin());
 		}
 		
 	 
-		@Test
+		/*@Test
 		public void testModifyUser() throws ParseException   {
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			Date d = dateFormat.parse("2015-03-23");

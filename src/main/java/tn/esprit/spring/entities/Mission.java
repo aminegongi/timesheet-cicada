@@ -29,7 +29,7 @@ public class Mission implements Serializable {
 	
 	// Mission est la cardinalité la plus faible, donc mappedBy ici : 
 	@OneToMany(mappedBy="mission")
-	private  List<Timesheet> timesheets;
+	private  List<TimesheetO> timesheets;
 	
 	public Mission() {
 		super();
@@ -73,11 +73,11 @@ public class Mission implements Serializable {
 		this.departement = departement;
 	}
 
-	public List<Timesheet> getTimesheets() {
+	public List<TimesheetO> getTimesheets() {
 		return timesheets;
 	}
 
-	public void setTimesheets(List<Timesheet> timesheets) {
+	public void setTimesheets(List<TimesheetO> timesheets) {
 		this.timesheets = timesheets;
 	}
 	
